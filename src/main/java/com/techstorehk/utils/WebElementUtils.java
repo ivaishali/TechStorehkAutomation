@@ -13,6 +13,7 @@ public class WebElementUtils {
     public static void waitForElementToPresent(WebElement element) {
         try {
             wait.until(ExpectedConditions.visibilityOf(element));
+
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }

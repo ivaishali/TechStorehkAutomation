@@ -1,7 +1,10 @@
 package com.techstorehk.utils;
 
+import io.cucumber.java.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -64,6 +67,17 @@ public class DriverManager {
     }
 
     public static void quit() {
+        driver.quit();
+        driver = null;
+    }
+
+    public static void tearDown(Scenario scenario) {
+        if (scenario.isFailed()) {
+            // Take a screenshot...
+            final byte[] screenshot = ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
+            // embed it in the report.
+            scenario.attach(screenshot, "image/png", scenario.getName());
+        }
         driver.quit();
         driver = null;
     }

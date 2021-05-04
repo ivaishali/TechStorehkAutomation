@@ -3,9 +3,9 @@ package com.techstorehk.steps;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 
-import static com.techstorehk.utils.DriverManager.initDriver;
-import static com.techstorehk.utils.DriverManager.quit;
+import static com.techstorehk.utils.DriverManager.*;
 
 public class Hooks {
 
@@ -15,7 +15,7 @@ public class Hooks {
     }
 
     @After
-    public void cleanUp() {
-        quit();
+    public void cleanUp(Scenario scenario) {
+        tearDown(scenario);
     }
 }

@@ -53,4 +53,23 @@ public class HeaderMenu {
         Assert.assertTrue(shoppingBasketIcon.isDisplayed(), "Shopping basket icon is not displayed !!!");
         Assert.assertTrue(searchIcon.isDisplayed(), "Search icon is not displayed !!!");
     }
+
+    public void clickOn(String menuItem) {
+        switch (menuItem) {
+            case "HIGHER EDUCATION":
+                higherEducationTab.click();
+                break;
+            case "BECOME AN INSTRUCTOR":
+                becomeInstructorTab.click();
+                break;
+            case "CORPORATE TRAINING":
+                corporateTrainingTab.click();
+                break;
+            case "RESOURCES":
+                resourcesTab.click();
+                break;
+            case "FREE COURSES":
+                freeCourseTab.click();
+        }
+    }
 }

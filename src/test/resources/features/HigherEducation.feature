@@ -1,3 +1,4 @@
+@Regression
 Feature: Higher Education
   Scenario: Verify Higher education section
     Given User open techstorehk website

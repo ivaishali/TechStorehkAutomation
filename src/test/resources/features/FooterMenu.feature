@@ -1,3 +1,4 @@
+@Regression
 Feature: Verify footer menu
   Scenario: Verify footer elements
     Given User open techstorehk website

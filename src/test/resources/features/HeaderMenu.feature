@@ -1,5 +1,5 @@
 Feature: Verify header functionality
-  @All
+  @Regression
   Scenario: Verify tabs of header menu
     Given User open techstorehk website
     Then Verify user is on homepage
